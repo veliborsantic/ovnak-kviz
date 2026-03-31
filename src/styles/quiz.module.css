@@ -391,6 +391,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
   font-weight: 600;
   font-size: 0.78rem;
   background: rgba(196, 153, 88, 0.18);
@@ -403,7 +404,10 @@
 
 .optionText {
   font-size: clamp(0.77rem, 2.95vw, 0.9rem);
-  line-height: 1.35;
+  line-height: 1.25;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
   padding-top: 0;
 }
 
@@ -424,7 +428,7 @@
 }
 
 .resultCopyBox {
-  border: 1px solid rgba(130, 108, 76, 0.24);
+  border: 3px solid rgba(130, 108, 76, 0.24);
   background: rgba(255, 255, 255, 0.45);
   border-radius: 16px;
   padding: clamp(10px, 2.4vw, 16px) clamp(10px, 2.4vw, 16px);
@@ -523,6 +527,7 @@
   .options {
     position: relative;
     top: -8px;
+    gap: clamp(4px, 1vh, 7px);
   }
 
   .resultBlock {
@@ -567,6 +572,10 @@
 
 /* Keep this at end so it overrides base .optionText rules */
 @media (orientation: portrait), (max-aspect-ratio: 11/10) {
+  .resultBlock {
+    padding: 0 0 clamp(14px, 3.4vh, 26px);
+  }
+
   .badge {
     font-size: 1.5rem !important;
   }
@@ -578,6 +587,8 @@
   .resultBlock .brand {
     font-size: 1.1rem !important;
     letter-spacing: 0.24em;
+    top: -18px;
+    margin-bottom: clamp(8px, 2vh, 14px);
   }
 
   .resultHeadline {
@@ -587,6 +598,18 @@
   .resultLines {
     font-size: clamp(1.35rem, 5vw, 1.75rem) !important;
     line-height: 1.4;
+  }
+
+  .resultCopyBox {
+    top: 6rem;
+    margin-bottom: clamp(12px, 2.8vh, 20px);
+  }
+
+  .resultActions {
+    margin-top: clamp(14px, 3.2vh, 28px);
+    padding-top: 0;
+    position: relative;
+    top: calc(12px + 10rem);
   }
 
   .primaryBtn,
