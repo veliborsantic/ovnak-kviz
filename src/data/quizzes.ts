@@ -35,7 +35,7 @@ export const signatureQuiz: QuizDefinition = {
       text: "Bez čega ne izlaziš iz kuće?",
       options: [
         { letter: "A", text: "Prsten" },
-        { letter: "B", text: "Minđuše" },
+        { letter: "B", text: "Naušnice" },
         { letter: "C", text: "Narukvica" },
         { letter: "D", text: "Ogrlica" },
       ],
@@ -45,7 +45,7 @@ export const signatureQuiz: QuizDefinition = {
       text: "Šta prvo stavljaš od nakita?",
       options: [
         { letter: "A", text: "Prsten" },
-        { letter: "B", text: "Minđuše" },
+        { letter: "B", text: "Naušnice" },
         { letter: "C", text: "Narukvicu" },
         { letter: "D", text: "Ogrlicu" },
       ],
@@ -82,12 +82,12 @@ export const signatureQuiz: QuizDefinition = {
     },
     {
       id: 6,
-      text: "Kada kupuješ nakit:",
+      text: "Kada kupuješ nakit, biraš:",
       options: [
-        { letter: "A", text: "Biram prstenje" },
-        { letter: "B", text: "Biram minđuše" },
-        { letter: "C", text: "Biram narukvice" },
-        { letter: "D", text: "Biram ogrlice" },
+        { letter: "A", text: "Prstenje" },
+        { letter: "B", text: "Naušnice" },
+        { letter: "C", text: "Narukvice" },
+        { letter: "D", text: "Ogrlice" },
       ],
     },
     {
@@ -104,6 +104,7 @@ export const signatureQuiz: QuizDefinition = {
   results: {
     A: {
       headline: "💍 Ring Icon",
+      iconBase: "clean_minimal",
       lines: [
         "Prstenje je tvoj zaštitni znak.",
         "👉 Fokus: ruke i detalji",
@@ -111,13 +112,15 @@ export const signatureQuiz: QuizDefinition = {
     },
     B: {
       headline: "✨ Earring Star",
+      iconBase: "dark-aesthetic",
       lines: [
-        "Sve počinje od minđuša — i tu završava.",
+        "Sve počinje od naušnica — i tu završava.",
         "👉 Fokus: lice i izražaj",
       ],
     },
     C: {
       headline: "🔗 Bracelet Muse",
+      iconBase: "playful-color",
       lines: [
         "Narukvice daju pokret i vibe tvom stilu.",
         "👉 Fokus: dinamika outfita",
@@ -125,6 +128,7 @@ export const signatureQuiz: QuizDefinition = {
     },
     D: {
       headline: "💎 Necklace Queen",
+      iconBase: "luxe-glam",
       lines: [
         "Ogrlica ti daje završni “wow”.",
         "👉 Fokus: dekolte i elegancija",
