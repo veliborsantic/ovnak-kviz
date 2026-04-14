@@ -14,6 +14,7 @@ export type QuizQuestion = {
 export type QuizResultCopy = {
   headline: string;
   lines: string[];
+  iconBase?: string;
 };
 
 export type QuizDefinition = {
@@ -211,6 +212,7 @@ export const instagramQuiz: QuizDefinition = {
   results: {
     A: {
       headline: "🤍 Clean Minimal",
+      iconBase: "clean_minimal",
       lines: [
         "Jednostavno, čisto i estetski savršeno.",
         "👉 Nakit: tanko zlato, minimalizam",
@@ -218,6 +220,7 @@ export const instagramQuiz: QuizDefinition = {
     },
     B: {
       headline: "🖤 Dark Aesthetic",
+      iconBase: "dark-aesthetic",
       lines: [
         "Misteriozno, edgy i vizualno jako.",
         "👉 Nakit: srebro, kontrasti",
@@ -225,6 +228,7 @@ export const instagramQuiz: QuizDefinition = {
     },
     C: {
       headline: "🌈 Playful Color",
+      iconBase: "playful-color",
       lines: [
         "Zabavna, energična i puna života.",
         "👉 Nakit: šareni, trend komadi",
@@ -232,6 +236,7 @@ export const instagramQuiz: QuizDefinition = {
     },
     D: {
       headline: "✨ Luxe Glam",
+      iconBase: "luxe-glam",
       lines: [
         "Sve izgleda skupo i dotjerano.",
         "👉 Nakit: statement zlato, glam",

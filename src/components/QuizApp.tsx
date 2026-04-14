@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import type { QuizDefinition } from "@/data/quizzes";
 import { allQuizzes } from "@/data/quizzes";
 import type { AnswerLetter } from "@/lib/quizLogic";
@@ -11,6 +12,8 @@ const ADVANCE_MS = 1050;
 const MUSIC_FADE_MS = 5000;
 const MUSIC_BASE_VOLUME = 0.28;
 const VIDEO_SRC = "/ovnak-bckg.mp4";
+const LEADING_EMOJI_REGEX = /^[^\p{L}\p{N}]+/u;
+const POINTER_PREFIX = "👉";
 
 export default function QuizApp() {
   const [phase, setPhase] = useState<Phase>("menu");
@@ -142,6 +145,13 @@ export default function QuizApp() {
     }
     return quiz.results[resultLetter];
   }, [quiz, resultLetter]);
+
+  const resultHeadlineText = useMemo(() => {
+    if (!resultCopy) {
+      return "";
+    }
+    return resultCopy.headline.replace(LEADING_EMOJI_REGEX, "").trim();
+  }, [resultCopy]);
 
   useEffect(() => {
     const audio = musicAudioRef.current;
@@ -315,11 +325,46 @@ export default function QuizApp() {
             <div className={`${styles.resultBlock} ${styles.animEnter}`}>
               <p className={styles.brand}>Tvoj rezultat</p>
               <div className={styles.resultCopyBox}>
-                <h2 className={styles.resultHeadline}>{resultCopy.headline}</h2>
+                <h2 className={styles.resultHeadline}>
+                  {resultCopy.iconBase ? (
+                    <span className={styles.resultHeadlineWithIcon}>
+                      <Image
+                        src={`/${resultCopy.iconBase}_a.png`}
+                        alt=""
+                        aria-hidden="true"
+                        className={styles.resultInlineIconA}
+                        width={24}
+                        height={24}
+                      />
+                      <span>{resultHeadlineText}</span>
+                    </span>
+                  ) : (
+                    resultHeadlineText
+                  )}
+                </h2>
                 <div className={styles.resultLines}>
-                  {resultCopy.lines.map((line) => (
-                    <p key={line}>{line}</p>
-                  ))}
+                  {resultCopy.lines.map((line) => {
+                    const hasPointer = line.trimStart().startsWith(POINTER_PREFIX);
+                    const cleanedLine = hasPointer
+                      ? line.replace(POINTER_PREFIX, "").trimStart()
+                      : line;
+                    if (hasPointer && resultCopy.iconBase) {
+                      return (
+                        <p key={line} className={styles.resultLineWithIcon}>
+                          <Image
+                            src={`/${resultCopy.iconBase}_b.png`}
+                            alt=""
+                            aria-hidden="true"
+                            className={styles.resultInlineIconB}
+                            width={20}
+                            height={20}
+                          />
+                          <span>{cleanedLine}</span>
+                        </p>
+                      );
+                    }
+                    return <p key={line}>{cleanedLine}</p>;
+                  })}
                 </div>
               </div>
               <div className={styles.resultActions}>

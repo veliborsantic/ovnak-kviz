@@ -444,6 +444,20 @@
   line-height: 1.15;
 }
 
+.resultHeadlineWithIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+}
+
+.resultInlineIconA {
+  width: 1.1em;
+  height: 1.1em;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .resultLines {
   display: flex;
   flex-direction: column;
@@ -452,6 +466,20 @@
   line-height: 1.45;
   opacity: 0.95;
   margin-bottom: 0;
+}
+
+.resultLineWithIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+}
+
+.resultInlineIconB {
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .resultLines p:first-child {
