@@ -327,6 +327,18 @@ export default function QuizApp() {
             <div className={`${styles.resultBlock} ${styles.animEnter}`}>
               <p className={styles.brand}>Tvoj rezultat</p>
               <div className={styles.resultCopyBox}>
+                {resultCopy.icon ? (
+                  <div className={styles.seasonIconWrap}>
+                    <Image
+                      src={resultCopy.icon}
+                      alt=""
+                      aria-hidden="true"
+                      className={styles.seasonIcon}
+                      width={56}
+                      height={56}
+                    />
+                  </div>
+                ) : null}
                 <h2 className={styles.resultHeadline}>
                   {resultCopy.iconBase ? (
                     <span className={styles.resultHeadlineWithIcon}>

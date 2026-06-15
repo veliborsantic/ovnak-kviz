@@ -14,6 +14,7 @@ export type QuizQuestion = {
 export type QuizResultCopy = {
   headline: string;
   lines: string[];
+  icon?: string;
   iconBase?: string;
 };
 
@@ -143,28 +144,32 @@ export const paletteQuiz: QuizDefinition = {
   ],
   results: {
     A: {
-      headline: "🌸 TI SI PROLJEĆE",
+      headline: "TI SI PROLJEĆE",
+      icon: "/seasons/spring.svg",
       lines: [
         "Tebi najbolje pristaju svježe, tople i blistave nijanse.",
         "👉 Beauty savjet: Biraj sjenila u tonovima breskve, šampanjca i zlatne boje koja će naglasiti prirodnu svježinu tena i licu dati zdrav, blistav sjaj.",
       ],
     },
     B: {
-      headline: "☀️ TI SI LJETO",
+      headline: "TI SI LJETO",
+      icon: "/seasons/summer.svg",
       lines: [
         "Tvoju ljepotu najviše ističu nježne i hladne nijanse.",
         "👉 Beauty savjet: Hladna ružičasta, mauve i srebrni tonovi pomoći će ti stvoriti elegantan, profinjen look koji prirodno naglašava tvoje crte lica.",
       ],
     },
     C: {
-      headline: "🍂 TI SI JESEN",
+      headline: "TI SI JESEN",
+      icon: "/seasons/autumn.svg",
       lines: [
         "Topli i bogati tonovi savršeno naglašavaju tvoje prirodne crte lica.",
         "👉 Beauty savjet: Sjenila u nijansama bronze, bakra i maslinaste boje dodatno će istaknuti toplinu tena i dubinu pogleda.",
       ],
     },
     D: {
-      headline: "❄️ TI SI ZIMA",
+      headline: "TI SI ZIMA",
+      icon: "/seasons/winter.svg",
       lines: [
         "Tebi najbolje pristaju intenzivne i kontrastne nijanse.",
         "👉 Beauty savjet: Srebrna, šljiva i tamnoplava savršen su izbor za naglašavanje izražajnih očiju i prirodnog kontrasta koji te čini upečatljivom.",
