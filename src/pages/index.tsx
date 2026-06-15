@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Ovnak — Kviz</title>
+        <title>Deborah Milano — Otkrij svoju idealnu paletu</title>
         <meta
           name="description"
-          content="Kviz: Tvoj signature komad? i Tvoj Instagram feed kao nakit?"
+          content="Deborah Milano kviz: Otkrij svoju idealnu paletu — Proljeće, Ljeto, Jesen ili Zima."
         />
         <meta
           name="viewport"

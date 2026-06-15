@@ -11,7 +11,7 @@ type Phase = "menu" | "quiz" | "result";
 const ADVANCE_MS = 1050;
 const MUSIC_FADE_MS = 5000;
 const MUSIC_BASE_VOLUME = 0.28;
-const VIDEO_SRC = "/ovnak-bckg.mp4";
+const LOGO_SRC = "/deborah-logo-white.png";
 const LEADING_EMOJI_REGEX = /^[^\p{L}\p{N}]+/u;
 const POINTER_PREFIX = "👉";
 
@@ -165,8 +165,9 @@ export default function QuizApp() {
       return;
     }
 
-    // Questions are 0-based, so 6 === 7th question.
-    if (questionIndex < 6) {
+    const lastQuestionIndex = Math.max(0, total - 1);
+
+    if (questionIndex < lastQuestionIndex) {
       clearMusicFadeTimer();
       audio.volume = MUSIC_BASE_VOLUME;
       if (audio.paused) {
@@ -177,7 +178,7 @@ export default function QuizApp() {
       return;
     }
 
-    // On 7th question: fade out for 3s, then stop playback.
+    // On the last question: fade out music, then stop playback.
     if (musicFadeTimerRef.current !== null) {
       return;
     }
@@ -197,7 +198,7 @@ export default function QuizApp() {
         audio.volume = MUSIC_BASE_VOLUME;
       }
     }, stepMs);
-  }, [clearMusicFadeTimer, phase, questionIndex, stopMusicNow]);
+  }, [clearMusicFadeTimer, phase, questionIndex, stopMusicNow, total]);
 
   useEffect(() => {
     return () => {
@@ -229,16 +230,17 @@ export default function QuizApp() {
         <audio ref={glamAudioRef} preload="auto" aria-hidden>
           <source src="/glam.mp3" type="audio/mpeg" />
         </audio>
-        <video
-          className={styles.videoBg}
-          autoPlay
-          loop
-          muted
-          playsInline
-          aria-hidden
-        >
-          <source src={VIDEO_SRC} type="video/mp4" />
-        </video>
+        <div className={styles.stageBg} aria-hidden />
+        <div className={styles.deborahLogoWrap}>
+          <Image
+            src={LOGO_SRC}
+            alt="Deborah Milano"
+            className={styles.deborahLogo}
+            width={520}
+            height={156}
+            priority
+          />
+        </div>
 
         <div className={styles.content}>
           {phase === "menu" && (

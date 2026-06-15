@@ -25,228 +25,152 @@ export type QuizDefinition = {
   results: Record<AnswerLetter, QuizResultCopy>;
 };
 
-export const signatureQuiz: QuizDefinition = {
-  id: "signature",
-  menuTitle: "Tvoj signature komad?",
-  menuSubtitle: "7 pitanja · otkrij koji nakit te najbolje opisuje",
+export const paletteQuiz: QuizDefinition = {
+  id: "palette",
+  menuTitle: "Otkrij svoju idealnu paletu",
+  menuSubtitle: "5 pitanja · Deborah Milano",
   questions: [
     {
       id: 1,
-      text: "Bez čega ne izlaziš iz kuće?",
+      text: "Koja je tvoja prirodna boja kose?",
       options: [
-        { letter: "A", text: "Prsten" },
-        { letter: "B", text: "Naušnice" },
-        { letter: "C", text: "Narukvica" },
-        { letter: "D", text: "Ogrlica" },
+        {
+          letter: "A",
+          text: "Zlatno plava, medena plava ili svijetlosmeđa sa zlatnim odsjajem",
+        },
+        {
+          letter: "B",
+          text: "Pepeljasto plava ili hladna svijetlosmeđa",
+        },
+        {
+          letter: "C",
+          text: "Kestenjasta, bakrena ili toplo smeđa",
+        },
+        {
+          letter: "D",
+          text: "Tamnosmeđa ili crna",
+        },
       ],
     },
     {
       id: 2,
-      text: "Šta prvo stavljaš od nakita?",
+      text: "Koje su boje tvoje oči?",
       options: [
-        { letter: "A", text: "Prsten" },
-        { letter: "B", text: "Naušnice" },
-        { letter: "C", text: "Narukvicu" },
-        { letter: "D", text: "Ogrlicu" },
+        {
+          letter: "A",
+          text: "Svijetloplave, tirkizne ili svijetlozelene",
+        },
+        {
+          letter: "B",
+          text: "Sivo-plave, sivo-zelene ili nježno plave",
+        },
+        {
+          letter: "C",
+          text: "Lješnjak, jantarne, maslinasto zelene ili toplo smeđe",
+        },
+        {
+          letter: "D",
+          text: "Tamnosmeđe, vrlo tamne zelene ili intenzivno plave",
+        },
       ],
     },
     {
       id: 3,
-      text: "Tvoj outfit je bez nakita:",
+      text: "Kako bi opisala svoj ten?",
       options: [
-        { letter: "A", text: "Nedovršen" },
-        { letter: "B", text: "Prejednostavan" },
-        { letter: "C", text: "Ok, ali može bolje" },
-        { letter: "D", text: "Fali mu fokus" },
+        {
+          letter: "A",
+          text: "Svijetao s toplim, zlatnim podtonom",
+        },
+        {
+          letter: "B",
+          text: "Svijetao ili srednje svijetao s hladnim ili ružičastim podtonom",
+        },
+        {
+          letter: "C",
+          text: "Topao, bež, maslinast ili zlatan",
+        },
+        {
+          letter: "D",
+          text: "Vrlo svijetao s izraženim kontrastom ili tamniji hladni ten",
+        },
       ],
     },
     {
       id: 4,
-      text: "Najčešće dobijaš komplimente za:",
+      text: "Kako tvoja koža reagira na sunce?",
       options: [
-        { letter: "A", text: "Ruke" },
-        { letter: "B", text: "Lice" },
-        { letter: "C", text: "Stil" },
-        { letter: "D", text: "Dekolte / vrat" },
+        {
+          letter: "A",
+          text: "Brzo poprimi zlatnu preplanulu boju",
+        },
+        {
+          letter: "B",
+          text: "Najprije pocrveni, a zatim lagano potamni",
+        },
+        {
+          letter: "C",
+          text: "Lako tamni i dobije brončani izgled",
+        },
+        {
+          letter: "D",
+          text: "Teško tamni ili stvara vrlo izražen kontrast s kosom",
+        },
       ],
     },
     {
       id: 5,
-      text: "Šta želiš da naglasiš?",
+      text: "Kakav je kontrast između tvoje prirodne boje kose i tena?",
       options: [
-        { letter: "A", text: "Ruke" },
-        { letter: "B", text: "Lice" },
-        { letter: "C", text: "Pokret" },
-        { letter: "D", text: "Vrat" },
-      ],
-    },
-    {
-      id: 6,
-      text: "Kada kupuješ nakit, biraš:",
-      options: [
-        { letter: "A", text: "Prstenje" },
-        { letter: "B", text: "Naušnice" },
-        { letter: "C", text: "Narukvice" },
-        { letter: "D", text: "Ogrlice" },
-      ],
-    },
-    {
-      id: 7,
-      text: "Tvoj stil je:",
-      options: [
-        { letter: "A", text: "Detaljan" },
-        { letter: "B", text: "Fokusiran na lice" },
-        { letter: "C", text: "Razigran" },
-        { letter: "D", text: "Elegantan" },
+        {
+          letter: "A",
+          text: "Nizak – kosa i ten su slične svjetline",
+        },
+        {
+          letter: "B",
+          text: "Nježan i mekan kontrast",
+        },
+        {
+          letter: "C",
+          text: "Srednji kontrast s toplim tonovima",
+        },
+        {
+          letter: "D",
+          text: "Izražen kontrast između kose i tena",
+        },
       ],
     },
   ],
   results: {
     A: {
-      headline: "💍 Ring Icon",
-      iconBase: "clean_minimal",
+      headline: "🌸 TI SI PROLJEĆE",
       lines: [
-        "Prstenje je tvoj zaštitni znak.",
-        "👉 Fokus: ruke i detalji",
+        "Tebi najbolje pristaju svježe, tople i blistave nijanse.",
+        "👉 Beauty savjet: Biraj sjenila u tonovima breskve, šampanjca i zlatne boje koja će naglasiti prirodnu svježinu tena i licu dati zdrav, blistav sjaj.",
       ],
     },
     B: {
-      headline: "✨ Earring Star",
-      iconBase: "dark-aesthetic",
+      headline: "☀️ TI SI LJETO",
       lines: [
-        "Sve počinje od naušnica — i tu završava.",
-        "👉 Fokus: lice i izražaj",
+        "Tvoju ljepotu najviše ističu nježne i hladne nijanse.",
+        "👉 Beauty savjet: Hladna ružičasta, mauve i srebrni tonovi pomoći će ti stvoriti elegantan, profinjen look koji prirodno naglašava tvoje crte lica.",
       ],
     },
     C: {
-      headline: "🔗 Bracelet Muse",
-      iconBase: "playful-color",
+      headline: "🍂 TI SI JESEN",
       lines: [
-        "Narukvice daju pokret i vibe tvom stilu.",
-        "👉 Fokus: dinamika outfita",
+        "Topli i bogati tonovi savršeno naglašavaju tvoje prirodne crte lica.",
+        "👉 Beauty savjet: Sjenila u nijansama bronze, bakra i maslinaste boje dodatno će istaknuti toplinu tena i dubinu pogleda.",
       ],
     },
     D: {
-      headline: "💎 Necklace Queen",
-      iconBase: "luxe-glam",
+      headline: "❄️ TI SI ZIMA",
       lines: [
-        "Ogrlica ti daje završni “wow”.",
-        "👉 Fokus: dekolte i elegancija",
+        "Tebi najbolje pristaju intenzivne i kontrastne nijanse.",
+        "👉 Beauty savjet: Srebrna, šljiva i tamnoplava savršen su izbor za naglašavanje izražajnih očiju i prirodnog kontrasta koji te čini upečatljivom.",
       ],
     },
   },
 };
 
-export const instagramQuiz: QuizDefinition = {
-  id: "instagram",
-  menuTitle: "Tvoj Instagram feed kao nakit?",
-  menuSubtitle: "7 pitanja · tvoj vizuelni vibe u nakitu",
-  questions: [
-    {
-      id: 1,
-      text: "Tvoj feed izgleda:",
-      options: [
-        { letter: "A", text: "Svijetao i čist" },
-        { letter: "B", text: "Tamniji i aesthetic" },
-        { letter: "C", text: "Šaren i zabavan" },
-        { letter: "D", text: "Luksuzan" },
-      ],
-    },
-    {
-      id: 2,
-      text: "Koju paletu koristiš?",
-      options: [
-        { letter: "A", text: "Neutralnu" },
-        { letter: "B", text: "Tamnu" },
-        { letter: "C", text: "Jarke boje" },
-        { letter: "D", text: "Gold/bež tonove" },
-      ],
-    },
-    {
-      id: 3,
-      text: "Tvoje fotke su:",
-      options: [
-        { letter: "A", text: "Minimalističke" },
-        { letter: "B", text: "Dramatične" },
-        { letter: "C", text: "Energične" },
-        { letter: "D", text: "Elegantne" },
-      ],
-    },
-    {
-      id: 4,
-      text: "Šta najviše objavljuješ?",
-      options: [
-        { letter: "A", text: "Lifestyle" },
-        { letter: "B", text: "Mood fotke" },
-        { letter: "C", text: "Zabavne trenutke" },
-        { letter: "D", text: "Fashion" },
-      ],
-    },
-    {
-      id: 5,
-      text: "Tvoj vibe je:",
-      options: [
-        { letter: "A", text: "Clean girl" },
-        { letter: "B", text: "Dark aesthetic" },
-        { letter: "C", text: "Fun & colorful" },
-        { letter: "D", text: "Luxury" },
-      ],
-    },
-    {
-      id: 6,
-      text: "Kako uređuješ slike?",
-      options: [
-        { letter: "A", text: "Light & soft" },
-        { letter: "B", text: "Contrast & shadow" },
-        { letter: "C", text: "Bright & vivid" },
-        { letter: "D", text: "Warm & polished" },
-      ],
-    },
-    {
-      id: 7,
-      text: "Kako želiš da te ljudi vide?",
-      options: [
-        { letter: "A", text: "Prirodno lijepu" },
-        { letter: "B", text: "Misterioznu" },
-        { letter: "C", text: "Zabavnu" },
-        { letter: "D", text: "Glamuroznu" },
-      ],
-    },
-  ],
-  results: {
-    A: {
-      headline: "🤍 Clean Minimal",
-      iconBase: "clean_minimal",
-      lines: [
-        "Jednostavno, čisto i estetski savršeno.",
-        "👉 Nakit: tanko zlato, minimalizam",
-      ],
-    },
-    B: {
-      headline: "🖤 Dark Aesthetic",
-      iconBase: "dark-aesthetic",
-      lines: [
-        "Misteriozno, edgy i vizualno jako.",
-        "👉 Nakit: srebro, kontrasti",
-      ],
-    },
-    C: {
-      headline: "🌈 Playful Color",
-      iconBase: "playful-color",
-      lines: [
-        "Zabavna, energična i puna života.",
-        "👉 Nakit: šareni, trend komadi",
-      ],
-    },
-    D: {
-      headline: "✨ Luxe Glam",
-      iconBase: "luxe-glam",
-      lines: [
-        "Sve izgleda skupo i dotjerano.",
-        "👉 Nakit: statement zlato, glam",
-      ],
-    },
-  },
-};
-
-export const allQuizzes: QuizDefinition[] = [signatureQuiz, instagramQuiz];
+export const allQuizzes: QuizDefinition[] = [paletteQuiz];
